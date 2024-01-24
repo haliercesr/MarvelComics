@@ -1,0 +1,83 @@
+@media only screen and (min-width: 200px) {
+    .searchbarContainer{
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100vw;
+        background-color: beige;
+    }
+
+    .searchbarContainer input{
+        width: 40%;
+        height: 80%;
+        margin-right: auto;
+        margin-left: 0px;
+        background-color: beige;
+        border: 0px;
+        padding: 0px;
+        color: #050505;
+        border-color: beige;
+    }
+
+    .searchbarContainer input::placeholder {
+        color: #888;
+      }
+
+    .searchbarContainer input:focus{
+        border: 0px;
+        border-color: beige;
+        padding: 0px;
+        outline: none;
+      }
+
+    .searchbarContainer button{
+        background-color: beige;
+        padding: 5px;
+        border:0px;
+    }
+
+    .searchbarContainer button i{
+        color:#cfcece;
+        margin-right: 5px;
+    }
+
+    .separadorVertical {
+        border-left: 2px solid #cfcece; /* Puedes ajustar el color y grosor del borde según tus preferencias */
+        height: 70%; /* Ajusta la altura según tus necesidades */
+        margin: 0 10px; /* Ajusta el margen según tus necesidades */
+      }
+    .logoBar{
+        width: auto;
+        height: 70%;
+        margin-left: 20px;
+    }
+
+    .starBar{
+        display: flex;
+        width: auto;
+        height: 100%;
+        margin-right: 35px;
+        align-items: center;
+    }
+
+    .starBar i{
+        color: #888;
+    }
+   
+  
+    }
+    
+    @media only screen and (min-width: 600px) {
+  
+     
+    }
+    
+    /*Extra large devices(large laptops and desktops, 1200px and up)*/
+    @media only screen and (min-width: 1200px) {
+    
+      
+    
+    }
+  
