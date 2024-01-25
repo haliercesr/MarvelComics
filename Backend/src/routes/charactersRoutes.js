@@ -1,11 +1,10 @@
 const { Router } = require('express');
+const {charactersHandler}=require('../handlers/charactersRouterHandler')
 
 const charactersRouter = Router();
 
 
-charactersRouter.get('/',(req,res)=>{
-    return res.status(200).send("hola")
-}); 
+charactersRouter.get('/',charactersHandler); 
 
 
 module.exports = charactersRouter;
