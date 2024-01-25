@@ -13,14 +13,14 @@ function App() {
   const nav=()=>{return location.pathname.includes('/detailcomic/:id')? null:<SearchBar/>}
   
   return (
-    <>
+    <div className='app'>
        {nav()}
       <Routes>
         <Route path='/home' element={<Home />} />
         <Route path='/detailcomic/:id' element={<Detailcomic/>} />
         <Route path='/favourite' element={<Favourite />}/>
       </Routes>
-    </>
+    </div>
   )
 }
 
