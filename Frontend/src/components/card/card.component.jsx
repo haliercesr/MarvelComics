@@ -2,7 +2,7 @@ import styles from './card.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.css'
-import hulk from '../../images/hulk.jpeg'
+import imagedefault from '../../images/default.jpg'
 
 
 
@@ -12,6 +12,7 @@ function Card(props) {
     const handleFavorite=(event)=>{
        
      }
+     console.log(image)
 
     return (
 
@@ -25,10 +26,10 @@ function Card(props) {
                     )
                 }
                 <div className={styles.Divimg}>
-                    <img src={hulk} alt='' />
+                    <img src={image?image:imagedefault} alt={name} />
                 </div>
                 <div className={styles.Divtext}>
-                    <h2 >Hulk</h2>
+                    <h2 >{name}</h2>
                 </div>
             </Link>
 

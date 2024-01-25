@@ -8,6 +8,7 @@
     max-height: 380px;
     box-shadow: 0 0 30px #979696;
     border-radius: 10px;
+    aspect-ratio: 1 / 1.5
 }
 
 .DivCard:hover{
