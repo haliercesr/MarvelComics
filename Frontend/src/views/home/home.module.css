@@ -1,8 +1,11 @@
 .contenedorHome{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 
+    repeat(
+        auto-fit,
+        minmax(150px, 0.5fr)
+    );
+   gap:34px;
+   margin: 50px;
 
 }
