@@ -2,12 +2,24 @@ import style from './home.module.css'
 import Card from '../../components/card/card.component'
 import { useDispatch,useSelector } from 'react-redux'
 import { getCharacters } from '../../components/redux/actions/actions'
-import { useEffect } from 'react'
+import { useEffect,useState } from 'react'
+import {Popuphome} from '../../components/popupHome/popuphome'
 
 
 function Home (props){
     const dispatch=useDispatch()
     const allCharacters=useSelector(state=>state.allCharacters)
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [idCard, setIdCard] = useState("");
+
+    function openModal(id) {
+      setIsOpen(true);
+      setIdCard(id)
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+      }
 
     useEffect(()=>{
      if(allCharacters.length===0)dispatch(getCharacters())
@@ -18,12 +30,13 @@ function Home (props){
         key={char.id}
         id={char.id}
         name={char.name}
-        image={`${char.thumbnail.path}.${char.thumbnail.extension}`}        
+        image={`${char.thumbnail.path}.${char.thumbnail.extension}`}
+        openModal={openModal}        
         />)
     }
 
     return(<div className={style.contenedorHome}>
-     
+     <Popuphome idCard={idCard} closeModal={closeModal} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} openModal={openModal}></Popuphome>
      {allCharacters && allCharacters.length>0 && cards(allCharacters)}
 
     </div>)

@@ -7,17 +7,16 @@ import imagedefault from '../../images/default.jpg'
 
 
 function Card(props) {
-    const { name, id, image } = props
+    const { name, id, image,openModal } = props
     const[IsFav,setIsFav]=useState(false)
     const handleFavorite=(event)=>{
        
      }
-     console.log(image)
 
     return (
 
         <div className={styles.DivCard}>
-            <Link to={`/detailcomic/${id}`}>
+            <Link onClick={()=>{openModal(id)}}>
                 {
                     IsFav ? (
                         <button className={styles.buttonFavorite} onClick={handleFavorite}>❤️</button>
