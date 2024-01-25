@@ -1,0 +1,51 @@
+.DivCard {
+    display: flex;
+    width: 256px;
+    height: 380px;
+    position: relative;
+    opacity: 1;
+}
+
+.DivCard a {
+    width: 100%;
+    height: 100%;
+}
+
+.buttonFavorite {
+    position: absolute;
+    right: 13px;
+    top: 17.51px;
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+}
+
+.buttonFavorite i {
+    color: beige;
+}
+
+.Divimg {
+    width: 100%;
+    height: 100%;
+}
+
+.Divimg img {
+    width: 100%;
+    height: 100%;
+}
+
+.Divtext {
+    position: absolute;
+    left: 23px;
+    bottom: 27px;
+}
+
+.Divtext h2 {
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    font: normal normal bold 19px/23px SF UI Text;
+    letter-spacing: -0.25px;
+    color: #FFFFFF;
+    opacity: 1;
+}

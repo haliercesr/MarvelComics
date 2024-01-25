@@ -1,7 +1,6 @@
 //Styles
 import style from './searchbar.module.css';
-import imagelogo from '../images/logomarvel.png';
-import starimage from '../images/estrellavacia.png'
+import imagelogo from '../../images/logomarvel.png';
 import '@fortawesome/fontawesome-free/css/all.css'
 
 function SearchBar(props) {

@@ -2,7 +2,7 @@
 import Home from './views/home/home.component';
 import Favourite from './views/favourite/favourite.component';
 import Detailcomic from './views/detailcomic/detailcomic.component';
-import SearchBar from './components/searchbar.component';
+import SearchBar from './components/searchbar/searchbar.component';
 //Commons imports
 import { Route, Routes, useLocation } from 'react-router-dom';
 //Styles
