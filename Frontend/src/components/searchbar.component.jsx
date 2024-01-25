@@ -11,7 +11,6 @@ function SearchBar(props) {
             <div className={style.separadorVertical}></div>
             <button>{<i class="fa-solid fa-magnifying-glass"></i>}</button>
             <input type="search" placeholder='Buscar' ></input>
-
             <div className={style.starBar}><i class="fa-regular fa-star"></i></div>
            
         </div>);
