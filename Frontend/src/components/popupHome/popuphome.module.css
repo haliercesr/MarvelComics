@@ -1,0 +1,111 @@
+@media only screen and (min-width: 200px) {
+    .pupopNone {
+        display: none;
+    }
+    
+    .pupopView {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    
+    }
+    
+    .conteinerPopup {
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        background: #fff;
+        width: 350px;
+    }
+    
+    .conteinerPopupButtonExit {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+    }
+    
+    .conteinerPopupButtonExit button {
+        background-color: transparent;
+        border: 0px;
+        padding: 0px;
+        cursor: pointer;
+    
+    }
+    
+    .conteinerPopup h2 {
+        padding: 4px;
+        margin: 0px;
+        font: normal normal bold 19px/23px SF UI Text;
+        font-weight: bold;
+        color: black!important;
+    }
+    
+    .comicsChar {
+        display: flex;
+        width: 400px;
+        margin: 10px;
+    
+    }
+    
+    .comicsChar img {
+        height: 80px;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+    
+    .comicsChar span {
+        font-size: 10px;
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .comicsChar p {
+        font-size: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .comicsCharText {
+        display: flex;
+        flex-direction: column;
+    }
+    }
+    
+    @media only screen and (min-width: 600px) {
+        .conteinerPopup {
+            width: auto;
+            margin:10px
+        }
+
+        .comicsChar img {
+            height: 120px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+
+        .conteinerPopup {
+
+            height: 70vh;
+        }
+
+        .comicsChar {
+            display: flex;
+            width: 450px;
+        
+        }
+
+        .comicsChar span {
+            font-size: 14px;
+        }
+        
+        .comicsChar p {
+            font-size: 14px;
+        }
+
+
+      
+    }
+    
+    /*Extra large devices(large laptops and desktops, 1200px and up)*/
+    @media only screen and (min-width: 1200px) {
+    
+    }

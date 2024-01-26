@@ -2,12 +2,12 @@ import styles from './card.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.css'
-import hulk from '../../images/hulk.jpeg'
+import imagedefault from '../../images/default.jpg'
 
 
 
 function Card(props) {
-    const { name, id, image } = props
+    const { name, id, image,openModal } = props
     const[IsFav,setIsFav]=useState(false)
     const handleFavorite=(event)=>{
        
@@ -16,7 +16,7 @@ function Card(props) {
     return (
 
         <div className={styles.DivCard}>
-            <Link to={`/detailcomic/${id}`}>
+            <Link onClick={()=>{openModal(id)}}>
                 {
                     IsFav ? (
                         <button className={styles.buttonFavorite} onClick={handleFavorite}>❤️</button>
@@ -25,10 +25,10 @@ function Card(props) {
                     )
                 }
                 <div className={styles.Divimg}>
-                    <img src={hulk} alt='' />
+                    <img src={image?image:imagedefault} alt={name} />
                 </div>
                 <div className={styles.Divtext}>
-                    <h2 >Hulk</h2>
+                    <h2 >{name}</h2>
                 </div>
             </Link>
 
