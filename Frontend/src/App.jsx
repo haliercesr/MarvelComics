@@ -10,7 +10,7 @@ import './App.css'
 
 function App() {
   const location=useLocation()
-  const nav=()=>{return location.pathname.includes('/detailcomic/:id')? null:<SearchBar/>}
+  const nav=()=>{return location.pathname.includes('/home')? null:<SearchBar/>}
   
   return (
     <div className='app'>
