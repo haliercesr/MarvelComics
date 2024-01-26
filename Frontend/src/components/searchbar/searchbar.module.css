@@ -50,7 +50,7 @@
       }
     .logoBar{
         width: auto;
-        height: 70%;
+        height: 50%;
         margin-left: 20px;
     }
 
@@ -70,14 +70,19 @@
     }
     
     @media only screen and (min-width: 600px) {
-  
+
+        .logoBar{
+            height: 60%;
+        }
      
     }
     
     /*Extra large devices(large laptops and desktops, 1200px and up)*/
     @media only screen and (min-width: 1200px) {
     
-      
+        .logoBar{
+            height: 70%;
+        }
     
     }
   
