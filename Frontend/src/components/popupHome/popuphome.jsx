@@ -12,7 +12,11 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        overflowY: 'auto',
     },
+    overlay: {
+        backgroundColor: ' rgba(41, 41, 41, 0.815)' // Fondo del overlay (fondo detrás del modal)
+      },
 };
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
@@ -72,25 +76,24 @@ export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCar
 
     return (
         <div className={modalIsOpen ? style.pupopView : style.pupopNone}>
-                {dataChar.name && <Modal
-                    isOpen={modalIsOpen}
-                    onAfterOpen={afterOpenModal}
-                    onRequestClose={closeModal}
-                    style={customStyles}
-                    contentLabel="Example Modal"
-                    className={style.popupOverlay}
-                    overlayClassName={style.popupContent}
-                >
-                    <div className={style.conteinerPopupButtonExit}>
-                        <button className={style.closeButton} onClick={close}>X</button>
+            {dataChar.name && <Modal
+                isOpen={modalIsOpen}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+            >
+                 <div className={style.conteinerPopupButtonExit}>
+                        <button onClick={close}>X</button>
                     </div>
-                    <div className={style.conteinerPopup}>
-                        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{dataChar.name}</h2>
-                        {comics && comics.length > 0 && comicChar(comics)}
-                    </div>
+                <div className={style.conteinerPopup}>
+                   
+                    <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{dataChar.name}</h2>
+                    {comics && comics.length > 0 && comicChar(comics)}
+                </div>
 
-                </Modal>}
-            </div>
+            </Modal>}
+        </div>
     );
 }
 
