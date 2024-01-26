@@ -1,9 +1,13 @@
-import style from './home.module.css'
-import Card from '../../components/card/card.component'
-import { useDispatch,useSelector } from 'react-redux'
-import { getCharacters } from '../../components/redux/actions/actions'
-import { useEffect,useState } from 'react'
-import {Popuphome} from '../../components/popupHome/popuphome'
+//components
+import Card from '../../components/card/card.component';
+import {Popuphome} from '../../components/popupHome/popuphome';
+//Commons imports
+import { useDispatch,useSelector } from 'react-redux';
+import { getCharacters } from '../../components/redux/actions/actions';
+import { useEffect,useState } from 'react';
+//Styles
+import style from './home.module.css';
+
 
 
 function Home (props){

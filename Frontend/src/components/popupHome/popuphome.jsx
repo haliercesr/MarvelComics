@@ -1,8 +1,14 @@
+//Components
 import Modal from 'react-modal';
-import React, { useEffect, useState } from 'react';
-import style from './popuphome.module.css';
+//Commons imports
 import axios from 'axios';
-import '@fortawesome/fontawesome-free/css/all.css'
+import React, { useEffect, useState } from 'react';
+import { getCharacterById,getCharacterComics } from '../redux/actions/actions';
+import { useDispatch,useSelector } from 'react-redux';
+//Styles
+import style from './popuphome.module.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 const customStyles = {
     content: {
@@ -24,29 +30,15 @@ Modal.setAppElement('#root');
 
 export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCard }) => {
     let subtitle;
-    const [dataChar, setData] = useState("")
-    const [comics, setComics] = useState("")
+    const dispatch=useDispatch()
+    const comics=useSelector(state=>state.comics)
+    const dataChar=useSelector(state=>state.character)
     useEffect(() => {
-        axios(`https://gateway.marvel.com/v1/public/characters/${idCard}?ts=1000&apikey=5f15e9db3871a39ded348aae25bfdffa&hash=b04eebb93204672cd6f26886dcf764e0`)
-            .then(({ data }) => {
-                if (data.data.results[0].name) {
-                    setData(data.data.results[0]);
-                } else {
-                    window.alert('Error');
-                }
-            });
-        axios(`https://gateway.marvel.com/v1/public/characters/${idCard}/comics?ts=1000&apikey=5f15e9db3871a39ded348aae25bfdffa&hash=b04eebb93204672cd6f26886dcf764e0`)
-            .then(({ data }) => {
-                if (data.data.results[0].id) {
-                    setComics(data.data.results);
-                } else {
-                    window.alert('Error');
-                }
-            });
-        return (() => {
-
-        })
-    }, [idCard])
+       if(!comics.name) dispatch(getCharacterComics(idCard))
+       if(!dataChar.name) dispatch(getCharacterById(idCard))
+        return () => {
+        }
+    }, [modalIsOpen])
 
 
     function afterOpenModal() {
@@ -57,10 +49,10 @@ export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCar
     function comicChar(comics) {
         return comics.map(char => {
             return <div className={style.comicsChar}>
-                <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt={char.title} />
+                {char.thumbnail && <img src={`${char.thumbnail.path}.${char.thumbnail.extension}`} alt={char.title} />}
                 <div className={style.comicsCharText}>
                     <span>{char.title}<i class="fa-regular fa-star fa-xl"></i></span>
-                    {char.textObjects.length > 0 && <p>{char.textObjects[0].text}</p>}
+                    {char.textObjects && char.textObjects.length > 0 && <p>{char.textObjects[0].text}</p>}
                 </div>
             </div>
         })
@@ -68,8 +60,13 @@ export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCar
 
     function close() {
         closeModal()
-        setData("")
-        setComics("")
+        dispatch(getCharacterById(""))
+        dispatch(getCharacterComics(""))
+    }
+
+    function Afterclose() {
+        dispatch(getCharacterById(""))
+        dispatch(getCharacterComics(""))
     }
 
 
@@ -79,9 +76,11 @@ export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCar
             {dataChar.name && <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
+                onAfterClose={Afterclose}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
+                shouldCloseOnOverlayClick={true}
             >
                  <div className={style.conteinerPopupButtonExit}>
                         <button onClick={close}>X</button>

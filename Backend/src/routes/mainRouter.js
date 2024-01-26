@@ -5,4 +5,6 @@ const mainRouter = Router();
 
 mainRouter.use("/characters",charactersRouter);
 
+
+
 module.exports = mainRouter;
