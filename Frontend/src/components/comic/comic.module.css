@@ -1,0 +1,62 @@
+@media only screen and (min-width: 200px) {
+
+    .comicsChar {
+        display: flex;
+        width: 400px;
+        margin: 10px;
+
+    }
+
+    .comicsChar img {
+        height: 80px;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+
+    .comicsChar span {
+        font-size: 10px;
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .comicsChar p {
+        font-size: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .comicsCharText {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+
+    .comicsChar img {
+        height: 120px;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+
+
+    .comicsChar {
+        display: flex;
+        width: 450px;
+
+    }
+
+    .comicsChar span {
+        font-size: 14px;
+    }
+
+    .comicsChar p {
+        font-size: 14px;
+    }
+
+
+
+}
+
+/*Extra large devices(large laptops and desktops, 1200px and up)*/
+@media only screen and (min-width: 1200px) {}
