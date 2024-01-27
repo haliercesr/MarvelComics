@@ -48,6 +48,7 @@ export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCar
     }
 
     function comicChar(comics) {
+        console.log(comics)
         return comics.map(char => {
             return <Comic
             Key={char.id}
