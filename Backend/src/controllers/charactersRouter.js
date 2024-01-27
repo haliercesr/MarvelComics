@@ -21,11 +21,17 @@ const getbyIdComics=async(id)=>{
     return data
 }
 
+const ComicsId=async(id)=>{
+    
+    const {data}=await axios.get(`https://gateway.marvel.com/v1/public/comics/${id}?ts=${ts}&apikey=${apikey}&hash=${hash}`)
+    return data
+}
 
 
 
 module.exports={
     getCharacters,
     getbyIdCharacter,
-    getbyIdComics
+    getbyIdComics,
+    ComicsId
 }
