@@ -21,6 +21,10 @@
         border-color: beige;
     }
 
+    #btViewFavourite{
+        margin-right: auto;
+    }
+
     .searchbarContainer input::placeholder {
         color: #888;
       }
@@ -52,19 +56,40 @@
         width: auto;
         height: 50%;
         margin-left: 20px;
+        cursor: pointer;
     }
 
-    .starBar{
+    .starBar {
         display: flex;
         width: auto;
         height: 100%;
-        margin-right: 35px;
         align-items: center;
+        border: 0px;
+        padding: 0px;
+        margin:0px;
+        cursor: pointer;
+        margin-right: 35px;
     }
+
 
     .starBar i{
         color: #888;
     }
+
+    .starBar i:hover{
+        color: #525151;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .starBar:not(:hover){
+        transition: all 0.4s ease-in-out;
+    }
+
+    #starBarviewFavourite i{ 
+        color:#525151!important;
+    }
+
+
    
   
     }

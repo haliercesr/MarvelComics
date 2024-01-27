@@ -10,7 +10,7 @@ import './App.css'
 
 function App() {
   const location=useLocation()
-  const nav=()=>{return location.pathname.includes('/home')? null:<SearchBar/>}
+  const nav=()=>{return location.pathname.includes('/favourite')?<SearchBar/>:null}
   
   return (
     <div className='app'>

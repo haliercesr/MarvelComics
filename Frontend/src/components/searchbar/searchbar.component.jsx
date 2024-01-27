@@ -1,23 +1,19 @@
+//Component imports
+import ViewHome from './viewHome';
+import ViewFavourite from './viewFavourite';
+import ViewDetail from './ViewDetail';
+//Commons imports
+import { useNavigate,useLocation } from 'react-router';
 //Styles
 import style from './searchbar.module.css';
-import imagelogo from '../../images/logomarvel.png';
-import '@fortawesome/fontawesome-free/css/all.css'
 
-function SearchBar({handleChange,searchString}) {
-
+function SearchBar({handleChange,searchString,linkImage}) {
+    const location = useLocation();
 
     return (<div className={style.searchbarContainer}>
-            <img src={imagelogo} alt='logo' className={style.logoBar} />
-            <div className={style.separadorVertical}></div>
-            <button >{<i class="fa-solid fa-magnifying-glass"></i>}</button>
-            <input 
-            type="search" 
-            placeholder='Buscar' 
-            onChange={(e)=>handleChange(e)} 
-            value={searchString}
-            />
-            <div className={style.starBar}><i class="fa-regular fa-star"></i></div>
-           
+          {location.pathname === '/home' && <ViewHome handleChange={handleChange} searchString={searchString}/>}
+          {location.pathname === '/favourite' && <ViewFavourite/>}
+          {location.pathname.includes('/detailcomic/') && <ViewDetail linkImage={linkImage}/>}
         </div>);
 }
 
