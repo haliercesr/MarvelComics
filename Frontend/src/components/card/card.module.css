@@ -19,10 +19,6 @@
     transition: all 0.3s ease-in-out;
 }
 
-.DivCard a {
-    width: 100%;
-    height: 100%;
-}
 
 .buttonFavorite {
     position: absolute;
@@ -31,6 +27,7 @@
     background-color: transparent;
     border: 0px;
     padding: 0px;
+    cursor: pointer;
 }
 
 .buttonFavorite i {
@@ -50,12 +47,12 @@
     object-fit: cover;
     transition: transform 0.3s;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .Divimg:hover img {
     transform: scale(1.1);
-   
-  }
+}
 
 .Divtext {
     position: absolute;

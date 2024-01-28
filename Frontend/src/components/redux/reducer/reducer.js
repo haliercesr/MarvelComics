@@ -1,9 +1,10 @@
-import { GET_CHARACTERS, GET_COMICS_ByID, GET_CHARACTER_ByID } from '../actions/types'
+import { GET_CHARACTERS, GET_COMICS_ByID, GET_CHARACTER_ByID, REMOVE_FAV, ADD_FAV } from '../actions/types'
 
 const initialState = {
     allCharacters: [],
     character: {},
-    comics: []
+    comics: [],
+    myFavorites: [],
 }
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -22,6 +23,16 @@ const rootReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 comics: payload,
+            }
+        case ADD_FAV:
+            return {
+                ...state,
+                myFavorites: payload,
+            }
+        case REMOVE_FAV:
+            return {
+                ...state,
+                myFavorites: payload,
             }
         default:
             return { ...state }

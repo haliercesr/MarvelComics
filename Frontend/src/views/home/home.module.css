@@ -1,4 +1,10 @@
 .contenedorHome{
+width: 100%;
+height: auto;
+background-color: rgb(224, 224, 219);
+}
+
+.contenedorCards{
     display: grid;
     justify-content: center;
     grid-template-columns: 
