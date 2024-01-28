@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
         'Favorites',
         {
             id: {
-                type: DataTypes.NUMBER,
+                type: DataTypes.INTEGER,
                 allowNull: false,
                 primaryKey: true,
             },
@@ -16,7 +16,12 @@ module.exports = (sequelize) => {
             image:{
                 type:DataTypes.STRING,
                 allowNull:false,
-            }
+            },
+            comics: {
+                type: DataTypes.JSONB,
+                allowNull: false,
+                defaultValue: [],
+              },
         },
         {
             timestamps:true,

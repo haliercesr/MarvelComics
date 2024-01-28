@@ -6,12 +6,12 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import style from './searchbar.module.css'
 import { useEffect } from 'react';
 
-function ViewDetail({linkImage}) {
+function ViewDetail({ linkImage, myFavorites }) {
     const navigate = useNavigate()
 
-    useEffect(()=>{
+    useEffect(() => {
 
-    },[linkImage])
+    }, [linkImage])
 
     return (<>
         <img onClick={() => { navigate('/home') }} src={imagelogo} alt='logo' className={style.logoBar} />
@@ -19,7 +19,11 @@ function ViewDetail({linkImage}) {
         <input
             value={linkImage}
         />
-        <button onClick={() => { navigate('/favourite') }} className={style.starBar}><i class="fa-regular fa-star fa-xl"></i></button>
+        {myFavorites.length > 0 && <span >{myFavorites.length}</span>}
+        <button onClick={() => { navigate('/favourite') }}
+            className={style.starBar}>
+            <i class={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
+    </button >
     </>);
 }
 

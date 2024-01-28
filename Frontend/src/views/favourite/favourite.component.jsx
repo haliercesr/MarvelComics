@@ -1,6 +1,6 @@
 //components
 import Card from '../../components/card/card.component';
-import { Popuphome } from '../../components/popupHome/popuphome';
+import { Popupfavorites } from '../../components/popupFavorites/popupfavorites';
 //Commons imports
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -25,7 +25,7 @@ function Favourite(props) {
     }
 
     useEffect(() => {
-
+       
     }, [myFavorites])
 
     const cards = (myFavorites) => {
@@ -41,7 +41,7 @@ function Favourite(props) {
 
     return (<div className={style.contenedorFavourite}>
         <div className={style.contenedorCardsFav}>
-            <Popuphome idCard={idCard} closeModal={closeModal} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} openModal={openModal}></Popuphome>
+            <Popupfavorites idCard={idCard} closeModal={closeModal} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} openModal={openModal}/>
             {myFavorites && myFavorites.length > 0 && cards(myFavorites)}
         </div>
     </div>)

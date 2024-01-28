@@ -86,7 +86,6 @@ export const getCharacterComics = (id) => {
 export const addFav = (char) => {
     
     return async function (dispatch) {
-        console.log(char)
         try {
             const { data } = await axios.post(`${URLSERVER}/favorite/fav`, char)
 
@@ -101,10 +100,37 @@ export const addFav = (char) => {
 }
 
 export const removeFav = (id) => {
-    console.log("true")
     return async (dispatch) => {
         try {
             const { data } = await axios.delete(`${URLSERVER}/favorite/fav/${id}`)
+            return dispatch({
+                type: REMOVE_FAV,
+                payload: data
+            })
+        } catch (error) { window.alert(error.message) }
+    }
+}
+
+export const addFavComic = (comic) => {
+    console.log(comic)
+    return async function (dispatch) {
+        try {
+            const { data } = await axios.post(`${URLSERVER}/favorite/fav?type=comic`, comic)
+
+            return dispatch(
+                {
+                    type: ADD_FAV,
+                    payload: data
+                }
+            )
+        } catch (error) { window.alert(error.message) }
+    }
+}
+
+export const removeFavComic = (idCard, idComic) => {
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.delete(`${URLSERVER}/favorite/fav/${idComic}?type=comic&&idCard=${idCard}`)
             return dispatch({
                 type: REMOVE_FAV,
                 payload: data

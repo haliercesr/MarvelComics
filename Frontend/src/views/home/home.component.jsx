@@ -4,7 +4,7 @@ import { Popuphome } from '../../components/popupHome/popuphome';
 import SearchBar from '../../components/searchbar/searchbar.component';
 //Commons imports
 import { useDispatch, useSelector } from 'react-redux';
-import { getCharacters } from '../../components/redux/actions/actions';
+import { getCharacters,addFav } from '../../components/redux/actions/actions';
 import { useEffect, useState } from 'react';
 //Styles
 import style from './home.module.css';
@@ -34,6 +34,8 @@ function Home(props) {
 
   useEffect(() => {
     if (allCharacters.length === 0) dispatch(getCharacters())
+    dispatch(addFav({id:0}))
+    
   }, [])
 
   const cards = (allCharacters) => {
@@ -45,7 +47,6 @@ function Home(props) {
     let cardsview=search===""?allCharacters:search;
 
     if(search.length===0){return <p>No hay resultados..</p>}
-
     return cardsview.map(char => <Card
       key={char.id}
       id={char.id}
