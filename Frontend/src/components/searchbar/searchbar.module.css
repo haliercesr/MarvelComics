@@ -42,6 +42,14 @@
         border:0px;
     }
 
+    .searchbarContainer span{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        margin-bottom: auto;
+        margin-top: 2px;
+    }
+
     .searchbarContainer button i{
         color:#cfcece;
         margin-right: 5px;

@@ -20,8 +20,8 @@ function Card(props) {
     const { name, id, image, openModal } = props
     const [IsFav, setIsFav] = useState(false)
     const dispatch=useDispatch()
-    const allCharacters = useSelector(state => state.allCharacters)
     const myFavorites=useSelector(state=>state.myFavorites)
+    const comics=[]
     useEffect(() => {
         myFavorites && myFavorites.forEach((fav) => {
             if (fav.id === id) {
@@ -37,7 +37,8 @@ function Card(props) {
             dispatch(removeFav(id));
         } else {
             setIsFav(true);
-            dispatch(addFav({ name, image, id }));
+            console.log(comics)
+            dispatch(addFav({ name, image, id,comics }));
         }
     }
 

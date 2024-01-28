@@ -5,7 +5,7 @@ import imagelogo from '../../images/logomarvel.png';
 import '@fortawesome/fontawesome-free/css/all.css'
 import style from './searchbar.module.css'
 
-function ViewFavourite(props) {
+function ViewFavourite({myFavorites}) {
     const navigate = useNavigate()
 
     return (<>
@@ -17,11 +17,12 @@ function ViewFavourite(props) {
             onClick={() => { navigate('/home') }}>
             {<i class="fa-solid fa-reply fa-xl"></i>}
         </button>
+        {<span >{myFavorites.length}</span>}
         <button
             onClick={() => { navigate('/favourite') }}
             className={style.starBar}
             id={style.starBarviewFavourite}>
-            <i class="fa-solid fa-star fa-xl"></i>
+            <i class={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
         </button>
     </>);
 }
