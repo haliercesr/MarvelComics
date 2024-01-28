@@ -1,8 +1,14 @@
+//Component
+import SearchBar from '../../components/searchbar/searchbar.component';
+//Commons imports
 import { useEffect, useState } from 'react';
-import style from './detailcomic.module.css'
 import { useParams } from 'react-router';
 import { URLSERVER } from '../../../configURL';
 import axios from 'axios';
+//Style
+import style from './detailcomic.module.css';
+
+
 
 function Detailcomic(props) {
     const [comic, setComic] = useState({})
@@ -16,6 +22,7 @@ function Detailcomic(props) {
     }, [id, comic])
 
     return (<>
+         {comic.id && <SearchBar linkImage={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}/>}
         {comic.id && <div className={style.contenedorDetailcomic}>
             <div className={style.ImagenComic}>
                 <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} />

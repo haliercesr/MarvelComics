@@ -55,13 +55,13 @@ function Home(props) {
     />)
   }
 
-  return (<>
+  return (<div className={style.contenedorHome}>
     <SearchBar  handleChange={handleChange} searchString={searchString} />
-    <div className={style.contenedorHome}>
+    <div className={style.contenedorCards}>
       <Popuphome idCard={idCard} closeModal={closeModal} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} openModal={openModal}></Popuphome>
       {allCharacters && allCharacters.length > 0 && cards(allCharacters)}
     </div>
-  </>)
+  </div>)
 }
 
 export default Home
