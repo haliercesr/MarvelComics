@@ -94,24 +94,21 @@ Cuenta con un diseño adaptable para moviles,tablets y pc.
 **2.** Para ver los comics de algun personaje debe hacer click en una card o insertar el nombre en el buscador
 
 <p align="center">
-  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/9df5ce6e-387b-40ad-aeb3-4dbe01b968b8
-" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/9df5ce6e-387b-40ad-aeb3-4dbe01b968b8" alt="Inicio" width=400 height=200>
 </p>
 
 
 **3.** Para ver los detalles de un comic debe hacer click en la imagen, tambien se puede seleccionar como favorito haciendo click en la estrella.
 
 <p align="center">
-  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/2935c44d-9203-4f1c-853c-4a7e85ba67a9
-" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/2935c44d-9203-4f1c-853c-4a7e85ba67a9" alt="Inicio" width=400 height=200>
 </p>
 
 
 **4.** Para ver sus personajes favoritos debe ir a la estrella superior izquierda, al hacer click en uno de sus favoritos puede ver los comics que selecciono como favoritos
 
 <p align="center">
-  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/bcb26a3b-0f28-4bb5-9cba-ed586592cf6a
-" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/bcb26a3b-0f28-4bb5-9cba-ed586592cf6a" alt="Inicio" width=400 height=200>
 </p>
 
 
