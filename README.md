@@ -83,31 +83,35 @@ Cuenta con un diseño adaptable para moviles,tablets y pc.
 
 ## Guía de Uso
 
-**1.** Visita [https://pi-drivers-2023.vercel.app/](https://pi-drivers-2023.vercel.app/) en tu navegador.
+**1.** Visita [https://marvel-comics-vqta.vercel.app/](https://marvel-comics-vqta.vercel.app/) en tu navegador.
 
 <p align="center">
-  <img src="https://github.com/haliercesr/PI-Drivers-2023/assets/115671323/7dbeb234-2ef7-4ed5-a9c8-1996bc6e086f" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/85521fa7-5351-4cda-b35b-7b1e5445228c
+" alt="Inicio" width=400 height=200>
 </p>
 
 
-**2.** Para ver los detalles de alguna conductor hacer click en una card o insertar el nombre en el buscador y presionar "buscar"
+**2.** Para ver los comics de algun personaje debe hacer click en una card o insertar el nombre en el buscador
 
 <p align="center">
-  <img src="https://github.com/haliercesr/PI-Drivers-2023/assets/115671323/f42a7b76-93f8-415b-bb49-fe780fa60ef9" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/9df5ce6e-387b-40ad-aeb3-4dbe01b968b8
+" alt="Inicio" width=400 height=200>
 </p>
 
 
-**3.** Para crear una raza hacer click en el boton "Create", completar todos los campos obligatorios y hacer click en crear.Para la imagen podes buscar el link de alguna imagen en la web.Si todo va bien te saldra el mensaje "el piloto se creo con exito!". Para volver al menu principal seleccionar el boton "volver a inicio"
+**3.** Para ver los detalles de un comic debe hacer click en la imagen, tambien se puede seleccionar como favorito haciendo click en la estrella.
 
 <p align="center">
-  <img src="https://github.com/haliercesr/PI-Drivers-2023/assets/115671323/f2d7ad7a-17af-4444-ad8d-faf9256354d0" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/2935c44d-9203-4f1c-853c-4a7e85ba67a9
+" alt="Inicio" width=400 height=200>
 </p>
 
 
-**4.** Para filtrar mejor las busquedas utilizar los filtros combinados.
+**4.** Para ver sus personajes favoritos debe ir a la estrella superior izquierda, al hacer click en uno de sus favoritos puede ver los comics que selecciono como favoritos
 
 <p align="center">
-  <img src="https://github.com/haliercesr/PI-Drivers-2023/assets/115671323/199a6ae1-8fca-4565-8515-8f836a2b5d34" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/bcb26a3b-0f28-4bb5-9cba-ed586592cf6a
+" alt="Inicio" width=400 height=200>
 </p>
 
 
