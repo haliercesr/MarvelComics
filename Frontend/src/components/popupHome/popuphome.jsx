@@ -29,29 +29,28 @@ const customStyles = {
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
 
-export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCard }) => {
+export const Popuphome = ({ allCharacters ,modalIsOpen, setIsOpen, openModal, closeModal, idCard }) => {
     let subtitle;
     const dispatch = useDispatch()
     const comics = useSelector(state => state.comics)
-    const dataChar = useSelector(state => state.character)
+   // const dataChar = useSelector(state => state.character)
+   const [dataChar,setDataChar]=useState()
     useEffect(() => {
         if (!comics.name) dispatch(getCharacterComics(idCard))
-        if (!dataChar.name) dispatch(getCharacterById(idCard))
-        return () => {
-        }
+        //if (!dataChar.name) {dispatch(getCharacterById(idCard))}
+    if(!dataChar || !dataChar.name){
+        let char=allCharacters.filter(ch=>ch.id===idCard)
+        setDataChar(char[0])
+    }
+      
     }, [modalIsOpen])
 
-
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
-    }
     
     function comicChar(comics) {
         return comics.map(char => {
             if(char.thumbnail){
             return <Comic
-            Key={char.id}
+            key={char.id}
             idComic={char.id}
             image={char.thumbnail.path+'.'+char.thumbnail.extension}
             text={char.textObjects[0]?char.textObjects[0].text:null}
@@ -74,15 +73,15 @@ export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCar
     function Afterclose() {
         dispatch(getCharacterById(""))
         dispatch(getCharacterComics(""))
+        setDataChar()
     }
 
 
 
     return (
         <div className={modalIsOpen ? style.pupopView : style.pupopNone}>
-            {dataChar.name && <Modal
+             <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
                 onAfterClose={Afterclose}
                 onRequestClose={closeModal}
                 style={customStyles}
@@ -92,11 +91,11 @@ export const Popuphome = ({ modalIsOpen, setIsOpen, openModal, closeModal, idCar
                 <div className={style.conteinerPopupButtonExit}>
                     <button onClick={close}>X</button>
                 </div>
-                <div className={style.conteinerPopup}>
+                {dataChar && <div className={style.conteinerPopup}>
                     <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{dataChar.name}</h2>
                     {comics && comics.length > 0 && comicChar(comics)}
-                </div>
-            </Modal>}
+                </div>}
+            </Modal>
         </div>
     );
 }

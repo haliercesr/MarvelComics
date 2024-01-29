@@ -2,6 +2,7 @@
 import Card from '../../components/card/card.component';
 import { Popupfavorites } from '../../components/popupFavorites/popupfavorites';
 //Commons imports
+import { addFav } from '../../components/redux/actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 //Styles
@@ -25,8 +26,8 @@ function Favourite(props) {
     }
 
     useEffect(() => {
-       
-    }, [myFavorites])
+        dispatch(addFav({id:0}))
+    }, [])
 
     const cards = (myFavorites) => {
        

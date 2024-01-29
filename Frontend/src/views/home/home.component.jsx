@@ -33,9 +33,8 @@ function Home(props) {
   }
 
   useEffect(() => {
-    if (allCharacters.length === 0) dispatch(getCharacters())
-    dispatch(addFav({id:0}))
-    
+    if (allCharacters.length === 0) {
+      dispatch(getCharacters())}
   }, [])
 
   const cards = (allCharacters) => {
@@ -59,7 +58,7 @@ function Home(props) {
   return (<div className={style.contenedorHome}>
     <SearchBar  handleChange={handleChange} searchString={searchString} />
     <div className={style.contenedorCards}>
-      <Popuphome idCard={idCard} closeModal={closeModal} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} openModal={openModal}></Popuphome>
+      <Popuphome allCharacters={allCharacters} idCard={idCard} closeModal={closeModal} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} openModal={openModal}></Popuphome>
       {allCharacters && allCharacters.length > 0 && cards(allCharacters)}
     </div>
   </div>)

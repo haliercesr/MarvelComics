@@ -12,7 +12,7 @@ function ViewHome({myFavorites, handleChange, searchString }) {
         <img onClick={() => { navigate('/home') }} src={imagelogo} alt='logo' className={style.logoBar} />
         <div className={style.separadorVertical}></div>
         <button >
-            {<i class="fa-solid fa-magnifying-glass"></i>}
+            {<i className="fa-solid fa-magnifying-glass"></i>}
         </button>
         <input
             type="search"
@@ -24,7 +24,7 @@ function ViewHome({myFavorites, handleChange, searchString }) {
         <button
             onClick={() => { navigate('/favourite') }}
             className={style.starBar}>
-            <i class={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
+            <i className={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
         </button>
     </>);
 }

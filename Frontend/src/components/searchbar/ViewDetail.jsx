@@ -17,12 +17,12 @@ function ViewDetail({ linkImage, myFavorites }) {
         <img onClick={() => { navigate('/home') }} src={imagelogo} alt='logo' className={style.logoBar} />
         <div className={style.separadorVertical}></div>
         <input
-            value={linkImage}
+            defaultValue={linkImage}
         />
         {myFavorites.length > 0 && <span >{myFavorites.length}</span>}
         <button onClick={() => { navigate('/favourite') }}
             className={style.starBar}>
-            <i class={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
+            <i className={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
     </button >
     </>);
 }

@@ -58,9 +58,9 @@ function Comic(props) {
                 <span>{title}
                     {
                         IsFav ? (
-                            <button className={style.btFavComic} onClick={handleFavorite}><i class="fa-solid fa-star fa-xl"></i></button>
+                            <button className={style.btFavComic} onClick={handleFavorite}><i className="fa-solid fa-star fa-xl"></i></button>
                         ) : (
-                            <button className={style.btFavComic} onClick={handleFavorite}>{<i class="fa-regular fa-star fa-xl"></i>}</button>
+                            <button className={style.btFavComic} onClick={handleFavorite}>{<i className="fa-regular fa-star fa-xl"></i>}</button>
                         )
                     }
                 </span>
