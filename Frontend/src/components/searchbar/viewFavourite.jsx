@@ -15,14 +15,14 @@ function ViewFavourite({myFavorites}) {
             className={style.starBar}
             id={style.btViewFavourite}
             onClick={() => { navigate('/home') }}>
-            {<i class="fa-solid fa-reply fa-xl"></i>}
+            {<i className="fa-solid fa-reply fa-xl"></i>}
         </button>
         {<span >{myFavorites.length}</span>}
         <button
             onClick={() => { navigate('/favourite') }}
             className={style.starBar}
             id={style.starBarviewFavourite}>
-            <i class={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
+            <i className={ myFavorites.length > 0? "fa-solid fa-star fa-xl":"fa-regular fa-star fa-xl"}></i>
         </button>
     </>);
 }

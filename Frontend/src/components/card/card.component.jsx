@@ -50,9 +50,9 @@ function Card(props) {
                 </div>
                 {
                 IsFav ? (
-                    <button className={styles.buttonFavorite} onClick={handleFavorite}><i class="fa-solid fa-star fa-xl"></i></button>
+                    <button className={styles.buttonFavorite} onClick={handleFavorite}><i className="fa-solid fa-star fa-xl"></i></button>
                 ) : (
-                    <button className={styles.buttonFavorite} onClick={handleFavorite}>{<i class="fa-regular fa-star fa-xl"></i>}</button>
+                    <button className={styles.buttonFavorite} onClick={handleFavorite}>{<i className="fa-regular fa-star fa-xl"></i>}</button>
                 )
             }
                 <div className={styles.Divtext}>

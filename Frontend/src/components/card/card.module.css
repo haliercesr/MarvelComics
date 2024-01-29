@@ -38,7 +38,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .Divimg img {
@@ -46,9 +46,11 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
+
+
 
 .Divimg:hover img {
     transform: scale(1.1);
@@ -56,14 +58,17 @@
 
 .Divtext {
     position: absolute;
-    left: 23px;
-    bottom: 27px;
+    display: flex;
+    align-items: center;
+    bottom: 0px;
+    width: 100%;
+    height: 35%; /* ajusta la altura de la sombra según tus necesidades */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.863) 100%);
 }
 
 
 .Divtext h2 {
-    margin: 0px;
-    padding: 0px;
+    margin: 10px;
     text-align: left;
     font: normal normal bold 19px/23px SF UI Text;
     letter-spacing: -0.25px;

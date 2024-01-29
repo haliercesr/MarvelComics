@@ -1,4 +1,4 @@
-import { GET_CHARACTERS, GET_CHARACTER_ByID, GET_COMICS_ByID, REMOVE_FAV, ADD_FAV } from './types'
+import { GET_CHARACTERS, GET_CHARACTER_ByID, GET_COMICS_ByID, REMOVE_FAV, ADD_FAV,ORDER } from './types'
 import axios from 'axios';
 import { URLSERVER } from '../../../../configURL';
 
@@ -25,7 +25,6 @@ export const getCharacterById = (id) => {
     return async function (dispatch) {
 
         if (id === "") {
-            console.log("holaa")
             return dispatch({
                 type: GET_CHARACTER_ByID,
                 payload: {}
@@ -84,7 +83,7 @@ export const getCharacterComics = (id) => {
 }
 
 export const addFav = (char) => {
-    
+
     return async function (dispatch) {
         try {
             const { data } = await axios.post(`${URLSERVER}/favorite/fav`, char)
@@ -112,7 +111,6 @@ export const removeFav = (id) => {
 }
 
 export const addFavComic = (comic) => {
-    console.log(comic)
     return async function (dispatch) {
         try {
             const { data } = await axios.post(`${URLSERVER}/favorite/fav?type=comic`, comic)
@@ -136,5 +134,12 @@ export const removeFavComic = (idCard, idComic) => {
                 payload: data
             })
         } catch (error) { window.alert(error.message) }
+    }
+}
+
+export const orderCards = (orden) => {
+    return {
+        type: ORDER,
+        payload: orden
     }
 }

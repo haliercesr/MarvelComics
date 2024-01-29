@@ -2,13 +2,14 @@
     .pupopNone {
         display: none;
     }
-    
+
     .pupopView {
         position: absolute;
         top: 50%;
         left: 50%;
+        z-index: 999;
     }
-    
+
     .conteinerPopup {
         display: flex;
         flex-direction: column;
@@ -16,53 +17,52 @@
         background: #fff;
         width: 350px;
     }
-    
+
     .conteinerPopupButtonExit {
-        position: fixed;
-        left: 0px;
-        top: 0px;
+        display: flex;
+        width: 100%;
     }
-    
+
     .conteinerPopupButtonExit button {
-        background-color: transparent;
+        background-color: rgb(197, 195, 195);
         border: 0px;
-        padding: 0px;
+        padding: 7px;
         cursor: pointer;
-    
+        z-index: 999;
+        border-radius: 3px;
+
     }
-    
+
     .conteinerPopup h2 {
         padding: 4px;
         margin: 0px;
         font: normal normal bold 19px/23px SF UI Text;
         font-weight: bold;
-        color: black!important;
+        color: black !important;
     }
-    
-   
+
+
+}
+
+@media only screen and (min-width: 600px) {
+    .conteinerPopup {
+        width: auto;
+        margin: 10px
     }
-    
-    @media only screen and (min-width: 600px) {
-        .conteinerPopup {
-            width: auto;
-            margin:10px
-        }
 
-        .comicsChar img {
-            height: 120px;
-            margin-right: 10px;
-            border-radius: 4px;
-        }
-
-        .conteinerPopup {
-
-            height: 70vh;
-        }
-
-      
+    .comicsChar img {
+        height: 120px;
+        margin-right: 10px;
+        border-radius: 4px;
     }
-    
-    /*Extra large devices(large laptops and desktops, 1200px and up)*/
-    @media only screen and (min-width: 1200px) {
-    
+
+    .conteinerPopup {
+
+        height: 70vh;
     }
+
+
+}
+
+/*Extra large devices(large laptops and desktops, 1200px and up)*/
+@media only screen and (min-width: 1200px) {}

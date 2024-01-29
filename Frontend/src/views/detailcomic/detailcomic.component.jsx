@@ -18,7 +18,6 @@ function Detailcomic(props) {
         !comic.id && axios(`${URLSERVER}/characters/comics/${id}`)
             .then((data) => { setComic(data.data[0]) })
             .catch(error => window.alert("error"))
-        console.log(comic)
     }, [id, comic])
 
     return (<>
@@ -30,10 +29,10 @@ function Detailcomic(props) {
             <div className={style.descriptionComic}>
                 <h1>{comic.title}</h1>
                 <h3>{`Published: ${comic.dates[0].date}`}</h3>
-                {comic.creators.items.map(char => {
-                    return <h3>{`${char.role}: ${char.name}`}</h3>
+                {comic.creators.items.map((char,index) => {
+                    return <h3 key={index}>{`${char.role}: ${char.name}`}</h3>
                 })}
-                <p>{comic.textObjects[0].text}</p>
+                <p>{comic.textObjects[0]?comic.textObjects[0].text:null}</p>
             </div>
 
         </div>}

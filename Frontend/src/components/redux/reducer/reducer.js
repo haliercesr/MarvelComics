@@ -1,4 +1,4 @@
-import { GET_CHARACTERS, GET_COMICS_ByID, GET_CHARACTER_ByID, REMOVE_FAV, ADD_FAV } from '../actions/types'
+import { GET_CHARACTERS, GET_COMICS_ByID, GET_CHARACTER_ByID, REMOVE_FAV, ADD_FAV, ORDER } from '../actions/types'
 
 const initialState = {
     allCharacters: [],
@@ -34,6 +34,11 @@ const rootReducer = (state = initialState, { type, payload }) => {
                 ...state,
                 myFavorites: payload,
             }
+        case ORDER:
+           // return {
+           //     ...state,
+           //     myFavorites: payload === "A" ? state.allCharacters.sort(function (a, b) { return a.id - b.id }) : state.allCharacters.sort(function (a, b) { return b.id - a.id })  //el primer .sort los ordena de forma ascendente y el segundo de forma descendente
+           // }
         default:
             return { ...state }
     }

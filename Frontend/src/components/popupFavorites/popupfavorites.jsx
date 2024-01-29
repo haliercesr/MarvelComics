@@ -4,7 +4,7 @@ import Comic from '../comic/comic';
 //Commons imports
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { getCharacterById, getCharacterComics } from '../redux/actions/actions';
+import { getCharacterById, getCharacterComics,orderCards } from '../redux/actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
 //Styles
 import style from './popupfavorites.module.css';
@@ -33,24 +33,23 @@ export const Popupfavorites = ({ modalIsOpen, setIsOpen, openModal, closeModal, 
     let subtitle;
     const dispatch = useDispatch()
     const myFavorites = useSelector(state => state.myFavorites)
-    const dataChar = useSelector(state => state.character)
+    const [dataChar, setDataChar] = useState()
+    //const dataChar = useSelector(state => state.character)
     useEffect(() => {
-        if (!dataChar.name) dispatch(getCharacterById(idCard))
-        return () => {
+        //if (!dataChar.name) dispatch(getCharacterById(idCard))
+        if (!dataChar || !dataChar.name) {
+            let char = myFavorites.filter(ch => ch.id === idCard)
+            setDataChar(char[0])
         }
+
     }, [modalIsOpen])
 
 
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
-    }
-
     function comicChar(myFavorites) {
         let char = myFavorites.filter(char => char.id === idCard) //personaje
-        let listComics = char[0].comics    //comics del personaje
+        let listComics = char[0].comics ? char[0].comics : [];    //comics del personaje
         return listComics.map(li => <Comic
-            key={li[1]}   //KEY                       falta mejorar el filtrado de la informacion
+            key={li[1] * 5}   //KEY                       falta mejorar el filtrado de la informacion
             idComic={li[1]}      //ID                  que me da el backend para que no quede asi,
             title={li[2]}   //TITLE
             creators={li[3]}//CREATORS
@@ -70,15 +69,21 @@ export const Popupfavorites = ({ modalIsOpen, setIsOpen, openModal, closeModal, 
     function Afterclose() {
         dispatch(getCharacterById(""))
         dispatch(getCharacterComics(""))
+        setDataChar()
+    }
+
+    function handleOrder(e) {
+        const evento=e.target.value
+        dispatch(orderCards(evento))
+        
     }
 
 
 
     return (
         <div className={modalIsOpen ? style.pupopView : style.pupopNone}>
-            {dataChar.name && <Modal
+            <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
                 onAfterClose={Afterclose}
                 onRequestClose={closeModal}
                 style={customStyles}
@@ -87,12 +92,18 @@ export const Popupfavorites = ({ modalIsOpen, setIsOpen, openModal, closeModal, 
             >
                 <div className={style.conteinerPopupButtonExit}>
                     <button onClick={close}>X</button>
+                    <select onChange={handleOrder}>
+                    <option value="mayor">Ordenar por mas recientes</option>
+                    <option value="menor">Ordenar por mas antiguos</option>
+                    </select>
                 </div>
-                <div className={style.conteinerPopup}>
+                {dataChar && <div className={style.conteinerPopup}>
                     <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{dataChar.name}</h2>
                     {myFavorites && myFavorites.length > 0 && comicChar(myFavorites)}
-                </div>
-            </Modal>}
+                </div>}
+
+            </Modal>
+
         </div>
     );
 }
