@@ -65,7 +65,6 @@ Cuenta con un diseño adaptable para moviles,tablets y pc.
  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/be3ac9bd-977d-423d-addd-82215f4484be" alt="alt text" width=225 height=400>
 
  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/c22f27dc-6413-46fa-a95a-6cae28a83a9b" alt="alt text" width=225 height=400>
-![localhost_5173_(iPhone XR) (2)](https://github.com/haliercesr/MarvelComics/assets/115671323/01e53e9a-7cd1-4cf6-8d49-5bf924cf1e9f)
 
  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/01e53e9a-7cd1-4cf6-8d49-5bf924cf1e9f" alt="alt text" width=225 height=400>
 
