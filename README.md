@@ -86,8 +86,7 @@ Cuenta con un diseño adaptable para moviles,tablets y pc.
 **1.** Visita [https://marvel-comics-vqta.vercel.app/](https://marvel-comics-vqta.vercel.app/) en tu navegador.
 
 <p align="center">
-  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/85521fa7-5351-4cda-b35b-7b1e5445228c
-" alt="Inicio" width=400 height=200>
+  <img src="https://github.com/haliercesr/MarvelComics/assets/115671323/85521fa7-5351-4cda-b35b-7b1e5445228c" alt="Inicio" width=400 height=200>
 </p>
 
 
